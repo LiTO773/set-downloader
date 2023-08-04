@@ -9,6 +9,8 @@ show_link = False
 link = ''
 
 def download_and_split(set_link, tracks):
+    global show_link
+    global link
     show_link = False
     link = ''
     session_id = str(uuid.uuid4())
