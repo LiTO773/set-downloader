@@ -66,9 +66,10 @@ def download_and_split(set_link, tracks):
 
     st.session_state.link = f"https://batedores-content.cheeseburgersemqueijo.ovh/{session_id}/output.zip"
 
+if st.session_state.link != '':
+    st.success(f"Zip mítico: {st.session_state.link}")
+
 st.header("Dunload de sets para membros honorários do batimento do chinelo 🩴")
 link_yt = st.text_input("Link YouTube", placeholder="https://www.youtube.com/watch?v=rxH2q9VhEXM")
 timestamps = st.text_area("Timestamps", placeholder="00:00:05 | ID (Sub Focus & Dimension?) - ID (Intro Dub?)\n00:01:48 | Sub Focus - Trip\n00:03:36 | Sub Focus - Rock It (Wilkinson Remix)\n00:04:18 | Sub Focus & Culture Shock - Recombine")
 st.button("DALEEEEEE ⬇️", use_container_width=True, on_click=download_and_split, args=(link_yt, timestamps))
-if st.session_state.link != '':
-    st.success(f"Zip mítico: {link}")
