@@ -2,12 +2,11 @@ version: '3.8'
 
 services:
   streamlit_app:
-    container_name: batedores
-    hostname: batedores
     build:
       context: .
       dockerfile: Dockerfile.streamlit
     command: streamlit run /app/main.py
+    hostname: batedores
     ports:
       - "9101:8501"
     volumes:
@@ -17,10 +16,9 @@ services:
       - PYTHONUNBUFFERED=1
 
   static_server:
-  container_name: batedores-cdn
-    hostname: batedores-cdn
     image: python:3.11-slim
     command: python -m http.server 8000
+    hostname: batedores-cdn
     ports:
       - "9102:8000"
     volumes:
