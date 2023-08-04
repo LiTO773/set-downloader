@@ -10,7 +10,7 @@ services:
     ports:
       - "9101:8501"
     volumes:
-      - ./mnt/1tb/Pi86/:/tmp
+      - /mnt/480gb/batedores:/tmp
     working_dir: /tmp
     environment:
       - PYTHONUNBUFFERED=1
@@ -22,7 +22,11 @@ services:
     ports:
       - "9102:8000"
     volumes:
-      - ./mnt/1tb/Pi86/:/tmp
+      - /mnt/480gb/batedores:/tmp
     working_dir: /tmp
     environment:
       - PYTHONUNBUFFERED=1
+networks:
+  default:
+    name: nginx
+    external: true
