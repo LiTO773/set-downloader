@@ -68,6 +68,7 @@ def download_and_split(set_link, tracks):
         except subprocess.CalledProcessError as e:
             st.error(f"Erro a zipar:\n{e.output}")
 
+    show_link = True
     link = f"https://batedores-content.cheeseburgersemqueijo.ovh/{session_id}/output.zip"
 
 st.header("Dunload de sets para membros honorários do batimento do chinelo 🩴")
